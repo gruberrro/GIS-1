@@ -1,0 +1,18 @@
+## Name: sum_flows.py
+## Created by: James (Trip) Hook, US EPA/OPP/EFED/EISB
+## Date created: 8/26/2013
+## Descripton: Provides for easy manipulation of feature class
+## Wishlist: 
+
+def nhd():
+    
+    # Line shapefile containing flow volumes
+    lines_with_flows = feature_class(r"P:\GIS_Data\Hook\OhioRiver\SAM_HR5.gdb\nhdplus_flowinglines", "ReachCode")
+
+    # NHD Plus v2 flowlines feature class
+    nhdplus_v2_lines = feature_class(r"P:\GIS_Data\Hook\OhioRiver\SAM_HR5.gdb\NHDFlowline_Clip", "ReachCode")
+
+    # Drainage basins polygon feature class
+    drainage_basins = feature_class(r"P:\GIS_Data\Hook\OhioRiver\SAM_HR5.gdb\test_basin", "reachcode")
+
+    main(lines_with_flows, nhdplus_v2_lines, drainage_basins)
